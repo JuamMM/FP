@@ -180,6 +180,10 @@ public:
       int pos_lectura = 0;
       int pos_escritura = 0;
 
+		//Sobreescribe la secuencia actual
+		//Si encuentra un caracter por primera vez, lo añade
+		//a la nueva secuencia, si no lo salta
+
       while (pos_lectura < total_utilizados){
          if ( pos_lectura == PrimeraOcurrencia(vector_privado[pos_lectura])){
             vector_privado[pos_escritura] = vector_privado[pos_lectura];
@@ -188,6 +192,7 @@ public:
 
          pos_lectura++;
       }
+		//Calculamos el nuevo total_utilizados
       total_utilizados = total_utilizados - (pos_lectura - pos_escritura);
 
    }

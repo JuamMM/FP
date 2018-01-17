@@ -154,8 +154,12 @@ public:
    }
 
    void InsertaSecuencia(int pos_insercion, SecuenciaCaracteres a_insertar){
+
       int tam_a_insertar = a_insertar.TotalUtilizados();
       int copia_total = total_utilizados;
+
+		//Comprobamos si hay espacio
+		//Calculamos el nuevo tama
 
       if(tam_a_insertar + TotalUtilizados() < TAMANIO){
          total_utilizados = total_utilizados + tam_a_insertar;
@@ -170,6 +174,7 @@ public:
    }
 
    void SustituyePorSecuencia(char a_borrar, SecuenciaCaracteres sec_sustituta){
+
       int i = 0;
 		int elemento_borrar = 0;
 		int fin_inicial = total_utilizados - 1;
@@ -387,4 +392,6 @@ int main(){
   secuencia.SustituyePorSecuencia(a_sustituir, sustituto);
 
   cout << "\nSecuencia nueva: " << secuencia.ToString() << "\n";
+
+  cin >> a_sustituir;
 }

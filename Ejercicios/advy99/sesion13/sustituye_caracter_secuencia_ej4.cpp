@@ -157,6 +157,10 @@ public:
       int tam_a_insertar = a_insertar.TotalUtilizados();
       int copia_total = total_utilizados;
 
+		//Si hay espacio, calculamos el nuevo tamaño
+		//Movemos las componentes para crear el hueco
+		//Insertamos nueva secuencia en el hueco creado
+
       if(tam_a_insertar + TotalUtilizados() < TAMANIO){
          total_utilizados = total_utilizados + tam_a_insertar;
          for(int i = total_utilizados - 1; i >= pos_insercion; i--){
@@ -174,6 +178,8 @@ public:
       while( i < total_utilizados ){
 
          if(vector_privado[i] == a_sustituir){
+				//Eliminamos la posicion i, insertamos la secuencia en esa posicion
+
             Elimina(i);
             InsertaSecuencia(i, sec_sustituta);
             i = i + sec_sustituta.TotalUtilizados();

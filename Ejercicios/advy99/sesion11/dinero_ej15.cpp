@@ -27,9 +27,11 @@ public:
          centimos = centimos + centimos_a_ingresar % 100;
       }
    }
+
    int Euros(){
       return euros;
    }
+	
    int Centimos(){
       return centimos;
    }

@@ -57,14 +57,17 @@ public:
       if(nueva_nota <= 10 && nueva_nota >= 0)
          nota_ev_continua = nueva_nota;
    }
+	
    void SetNotaExPracticas1(double nueva_nota){
       if(nueva_nota <= 10 && nueva_nota >= 0)
          nota_ex_practicas_1 = nueva_nota;
    }
+
    void SetNotaExPracticas2(double nueva_nota){
       if(nueva_nota <= 10 && nueva_nota >= 0)
          nota_ex_practicas_2 = nueva_nota;
    }
+
    void SetNotaExEscrito(double nueva_nota){
       if(nueva_nota <= 10 && nueva_nota >= 0)
          nota_ex_escrito = nueva_nota;

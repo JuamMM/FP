@@ -29,6 +29,7 @@ private:
    int num_decimales;
 
 public:
+	//Constructor por defecto
    FormatearDoubleToString()
       :delimitador_der(">>"),
        delimitador_izq("<<"),
@@ -45,36 +46,47 @@ public:
       string parte_natural_cadena;
       string parte_decimal_cadena;
 
+		//Redondeamos parte decimal
       parte_decimal_como_int = Redondea(parte_decimal, num_decimales) * PotenciaEntera(10, num_decimales);
 
+		//Pasamos parte natural y decimal a string
       parte_natural_cadena = to_string(parte_natural);
       parte_decimal_cadena = to_string(parte_decimal_como_int);
 
+		//Añadimos delimitadores y demas
       cadena_formateada = delimitador_izq + parte_natural_cadena + separador + parte_decimal_cadena + delimitador_der;
 
       return cadena_formateada;
    }
+
    void SetDelimitadorIzq(string cadena_nueva){
       delimitador_izq = cadena_nueva;
    }
+
    void SetDelimitadorDer(string cadena_nueva){
       delimitador_der = cadena_nueva;
    }
+
    void SetSeparador(char caracter){
       separador = caracter;
    }
+
    void SetNumDecimales(int entero){
       num_decimales = entero;
    }
+
    string DelimitadorIzq(){
       return delimitador_izq;
    }
+
    string DelimitadorDer(){
       return delimitador_der;
    }
+
    char Separador(){
       return separador;
    }
+	
    int NumDecimales(){
       return num_decimales;
    }

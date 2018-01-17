@@ -168,6 +168,9 @@ public:
    void EliminaOcurrenciasAPartirDe(int posicion,char a_borrar){
       int i = posicion;
 
+		//Buscamos occurrencias de a_borrar
+		//La elimina si lo encuentra
+
       while(i < total_utilizados){
          if(vector_privado[i] == a_borrar)
             Elimina(i);
@@ -178,6 +181,9 @@ public:
 
    void EliminaRepetidos(){
       int i = 0;
+
+		//Eliminamos un caracter X todas las ocurrencias
+		//a partir de la siguiente posicion de X
 
       while(i < total_utilizados){
          EliminaOcurrenciasAPartirDe(i + 1, vector_privado[i]);

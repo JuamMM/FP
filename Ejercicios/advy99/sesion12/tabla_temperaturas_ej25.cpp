@@ -34,13 +34,19 @@ public:
       else
          return NAN;
    }
+
    void Modifica(int num_ciudad, int num_hora, double nueva_temperatura){
       if( ExisteCiudadYTemperatura(num_ciudad, num_hora) ){
          tabla_temperaturas[num_ciudad][num_hora] = nueva_temperatura;
       }
    }
+
    int Minimo(int fila_a_buscar){
       int columna_minimo = 0;
+
+		//Buscamos el minimo de una fila
+		//Consideramos que es el primero
+		//Buscamos en el vector menores, si encuentra, lo sobreescribe
 
       for(int i = 1; i < NUM_TEMPERATURAS; i++){
          if(tabla_temperaturas[fila_a_buscar][i] < tabla_temperaturas[fila_a_buscar][columna_minimo])
@@ -53,6 +59,10 @@ public:
    MaximoTempEntreMinimos MaxMinimos(){
       MaximoTempEntreMinimos maximo_entre_minimos;
       int minimos_por_fila[NUM_CIUDADES];
+
+		//Buscamos los minimos de todas las filas
+		//Buscamos el maximo del vector de minimos
+		//Asignamos y devolvemos estructura con la fila y columna
 
       for (int i = 0; i < NUM_CIUDADES; i++){
          minimos_por_fila[i] = Minimo(i);

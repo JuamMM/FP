@@ -6,6 +6,7 @@ const int HORAS_EN_DIA = 24;
 const int MINUTOS_EN_HORA = 60;
 const int SEGUNDOS_EN_MINUTO = 60;
 
+//Filtro entrada entre dos enteros
 int LeerIntRango(int minimo, int maximo){
    int dato;
    do{
@@ -14,6 +15,7 @@ int LeerIntRango(int minimo, int maximo){
 
    return dato;
 }
+
 int ValorAbsoluto(int dato){
    if (dato > 0)
       return dato;
@@ -37,22 +39,30 @@ private:
    }
 
 public:
+
+	//Constructor vacio, por defecto instante 0 0 0
    Instante()
       :horas(0),
        minutos(0),
        segundos(0)
    {
    }
+
+	//Constructor si dan segundos
+	//Calcula las horas, minutos y segundos a partir
+	//de unos segundos iniciales
    Instante(int segundos_iniciales){
       horas = segundos_iniciales / 3600;
       segundos_iniciales = segundos_iniciales - (horas * 3600);
       minutos = segundos_iniciales / 60;
       segundos = segundos_iniciales % 60;
    }
+
    void SetHoras(int nueva_hora){
       if (ValidarDatoEnRango(nueva_hora, 0, HORAS_EN_DIA - 1))
          horas = nueva_hora;
    }
+
    void SetMinutos(int nuevos_minutos){
       if (ValidarDatoEnRango(nuevos_minutos, 0, MINUTOS_EN_HORA - 1))
          minutos = nuevos_minutos;
@@ -61,9 +71,11 @@ public:
       if (ValidarDatoEnRango(nuevos_segundos, 0, SEGUNDOS_EN_MINUTO - 1))
          segundos = nuevos_segundos;
    }
+
    int MinutosTranscurridos(){
       return horas * 60 + minutos;
    }
+
    int SegundosTranscurridos(){
       return MinutosTranscurridos() * 60 + segundos;
    }
@@ -74,6 +86,7 @@ public:
    int Minutos(){
       return minutos;
    }
+
    int Segundos(){
       return segundos;
    }

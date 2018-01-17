@@ -376,9 +376,11 @@ private:
 
    int total_entradas = 0;
 
+
    bool EsCorrectoIndice(int indice){
       return 0 <= indice && indice < total_entradas;
    }
+
 public:
    Tunel(double distancia_km_tunel)
       :distancia_km(distancia_km_tunel)
@@ -455,12 +457,18 @@ int main(){
    string matricula;
    int hora, min, seg;
    
+	//Establecemos la salida de la velocidad
+
    FormateadorDoubles formateador_velocidad("", " km/h");
    formateador_velocidad.SetNumeroDecimales(1);
+
+	//Pedimos longitud y creamos tunel
 
    cin >> long_tunel;
 
    Tunel tunel(long_tunel);
+
+	//Comenzamos pedida de datos
 
    cin >> tipo_entrada_salida;
 

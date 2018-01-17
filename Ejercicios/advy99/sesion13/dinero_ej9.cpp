@@ -8,48 +8,71 @@ private:
    int centimos;
 
    bool CifraAIngresarCorrecta(int euros_a_ingresar, int centimos_a_ingresar){
+
       if (euros_a_ingresar >= 0 && centimos_a_ingresar > 0)
          return true;
       else
          return false;
+			
    }
+
    void PasarCentimosAEuros(){
+
       euros = euros + (centimos / 100);
       centimos = centimos % 100;
+
    }
+
 public:
    Dinero()
       :euros(0),
        centimos(0)
    {
    }
+
 	Dinero(int euros_ini, int centimos_ini)
+
 		:euros(euros_ini),
 		 centimos(centimos_ini)
+
 	{
 	}
+
    void Ingresar(int euros_a_ingresar, int centimos_a_ingresar){
+
       if( CifraAIngresarCorrecta(euros_a_ingresar, centimos_a_ingresar) ){
+
          euros = euros + euros_a_ingresar;
          centimos = centimos + centimos_a_ingresar;
          PasarCentimosAEuros();
+
       }
+
    }
+
    void Sumale(Dinero otra_cuenta){
+
       Ingresar(otra_cuenta.Euros(),otra_cuenta.Centimos());
+
    }
+
 	Dinero Suma(Dinero otra_cuenta){
+
 		Dinero suma_cuentas(euros, centimos);
 		suma_cuentas.Sumale(otra_cuenta);
 
 		return suma_cuentas;
+
 	}
+
    int Euros(){
       return euros;
    }
+
    int Centimos(){
    	return centimos;
    }
+
 };
 
 int main(){

@@ -27,24 +27,30 @@ public:
        altura(0)
    {
    }
+
    void SetLatitud(double nueva_latitud){
       if(EstaEnIntervalo(nueva_latitud, -90,90))
          latitud = PasarARadianes(nueva_latitud);
    }
+
    void SetLongitud(double nueva_longitud){
       if(EstaEnIntervalo(nueva_longitud,-180,180))
          longitud = PasarARadianes(nueva_longitud);
    }
+
    void SetAltura(double nueva_altura){
       if(EstaEnIntervalo(nueva_altura, -423, 8848))
          altura = nueva_altura;
    }
+
    double Longitud(){
       return longitud;
    }
+	
    double Latitud(){
       return latitud;
    }
+
    double Altura(){
       return altura;
    }

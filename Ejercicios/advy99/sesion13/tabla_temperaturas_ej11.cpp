@@ -147,12 +147,15 @@ struct ParFilacolumna{
 
 class TablaTemperaturas{
 private:
+
    static const int CAPACIDAD_CIUDADES = 100;
    SecuenciaDoubles temp[CAPACIDAD_CIUDADES];
    int num_ciudades = 0;
+
    bool IndicesCorrectos(int fil, int col){
       return 0 <= fil && fil < CAPACIDAD_CIUDADES && 0 <= col && col < temp[0].Capacidad();
    }
+
 public:
    TablaTemperaturas()
    {
@@ -163,20 +166,27 @@ public:
    }
    
    double Valor(int ciudad, int hora){
+
       if (IndicesCorrectos(ciudad, hora))
          return  temp[ciudad].Elemento(hora);
       else
          return NAN;  
+
    }
+
 	void Aniade(SecuenciaDoubles horas_nueva_ciudad){
+
 		temp[num_ciudades] = horas_nueva_ciudad;
 		num_ciudades++;
+
 	}
 	void AniadeTempA(int ciudad, double nueva_temp){
 		if ( 0 <= ciudad && ciudad < num_ciudades)
 			temp[ciudad].Aniade(nueva_temp);
 	}
+
 	int Minimo(int ciudad){
+
 		if ( 0 <= ciudad && ciudad < num_ciudades){
 			return temp[ciudad].PosicionMinimo();
 		}
@@ -184,10 +194,14 @@ public:
 			return -1;
 		}
 	}
+
 	ParFilacolumna MaximoMinimos(){
+
 		ParFilacolumna maximo_entre_minimos;
 		SecuenciaDoubles temp_minimas;
       int minimos_por_fila[num_ciudades];
+
+		//Buscamos minimos por ciudades y despues el maximo de dichos valores
 
       for (int i = 0; i < num_ciudades; i++){
          minimos_por_fila[i] = Minimo(i);

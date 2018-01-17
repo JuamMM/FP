@@ -172,6 +172,9 @@ public:
    void EliminaOcurrencias(char a_borrar){
       int i = 0;
 
+		//Recorre una a una las posiciones
+		//Si coincide lo elimina
+
       while(i < total_utilizados){
          if(vector_privado[i] == a_borrar)
             Elimina(i);
