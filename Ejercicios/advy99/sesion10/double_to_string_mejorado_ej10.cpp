@@ -44,7 +44,7 @@ string DoubleToString(double numero,int cifra){
    parte_decimal = numero_redondeado * PotenciaEntera(10, cifra);
    parte_decimal_convertido = to_string(parte_decimal);
 
-   numero_convertido_redondeado = "" + parte_natural_convertido;
+   numero_convertido_redondeado = parte_natural_convertido;
    numero_convertido_redondeado.push_back('.');
    numero_convertido_redondeado = numero_convertido_redondeado + parte_decimal_convertido;
 
