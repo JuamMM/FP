@@ -1,0 +1,12 @@
+-Explicar que problema se observa en los siguientes condicionales:
+
+a) La condición del if comprueba cuando se cumple que la variable tipo_radar vale tanto una F mayúscula
+como una f minúscula. Esto está mal dado que la variable solo puede tomar un valor. Debería er
+sustituido, en todo caso, por un O (||).
+
+b) Dado que buscamos el caso en el que la variable se encuentra fuera de rango, la condición
+debería ser un O (||) en vez de un Y (&&), ya que se busca en el cas en el que se encuentre
+por encima o por debajo - no puede ser ambos.
+
+c) Las dos condiciones que se presentanson un tanto redundantes, dado que cuando se cumpla "velocidad>110",
+tambien se estará cumpliendo que "velocidad>100". Se está repitiendo codigo de manera innecesaria.
