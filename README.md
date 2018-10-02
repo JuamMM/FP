@@ -1,3 +1,3 @@
 Ejercicios de la asignatura FP 
 
-En las distintas ramas encontraras ejercicios realizados por distintos estudiantes
+En las distintas ramas encontrarás ejercicios realizados por distintos estudiantes.
