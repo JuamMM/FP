@@ -14,7 +14,7 @@ int main(){
 	cout << "Introduce la resistencia: ";
 	cin >> resistencia;
 	
-	voltaje = intensidad * resistencia;
+	voltaje = intensidad*resistencia;
 	
-	cout << "\nEl voltaje es de " << voltaje << " voltios\n";
+	cout << "\n\nEl voltaje es de " << voltaje << " voltios\n\n";
 }
