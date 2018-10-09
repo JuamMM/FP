@@ -2,6 +2,9 @@
 #include <cmath>
 using namespace std;
 
+// Programa que simula un radar de velocidad e indica la velocidad que tomaría dicho fijo o movil, 
+// en funcion del tipo de radar que se indicase
+
 int main() 
 {
 	double v, margen_error;
