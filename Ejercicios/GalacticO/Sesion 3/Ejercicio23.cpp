@@ -4,14 +4,14 @@ using namespace std;
 
 int main() 
 {
-	double n, r;
-	int entero;
+	double numero, truncar;  // Variables
+	int entero;  // numero Truncado a devolver
 	cout << "Inserte un numero decimal: ";	
-	cin >> n;
+	cin >> numero;
 	cout << "Inserte el numero de decimales que desea truncar: ";	
-	cin >> r;
-	n = n * pow(10,r);
-	entero = n;
-	n = entero / pow(10,r);
-	cout << "Este es su numero truncado: " << n;
+	cin >> truncar;
+	numero = numero * pow(10,truncar);
+	entero = numero;
+	numero = entero / pow(10,truncar);
+	cout << "Este es su numero truncado: " << numero;
 }
